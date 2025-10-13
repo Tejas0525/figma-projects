@@ -1,0 +1,491 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Main Wrapper */
+.div {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  height: 100vh;
+  background-color: black;
+}
+
+/* Sidebar */
+.side-bar {
+  display: grid; 
+  grid-template-rows: auto 1fr auto; 
+  background-color: #1e1e2f;
+  color: white;
+  padding: 1rem;
+}
+
+#h1Tag {
+  color: white;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-menu {
+  display: grid;
+  align-content: start;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.sidebar-menu li {
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.sidebar-menu li:hover{
+  background-color: #2f3a8f;
+}
+
+.sidebar-footer {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 1rem;
+  padding-left: 4rem;
+  padding-top: 5rem;
+  padding-right: 8rem;
+  color: white;
+  background-color: #27243c;
+}
+
+.dashboard-title {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;  
+    grid-column: 1 / -1;    
+}
+
+
+/* Dashboard*/
+.top1-bar,
+.top2-bar,
+.top3-bar,
+.mid1-bar,
+.mid2-bar,
+.bottom-bar {
+  background-color: #2E2E48;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.top1-bar .sales-avatar img,
+.top2-bar .sales-avatar img,
+.top3-bar .sales-avatar img {
+    width: 5rem;       
+    height: 5rem;      
+    border-radius: 50%; 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.top1-bar, .top2-bar, .top3-bar {
+    position: relative;
+}
+/* GRID */
+.top1-bar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.top2-bar {
+  grid-column: 2 / 3s;
+  grid-row: 1 / 2;
+}
+
+.top3-bar {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.mid1-bar {
+  grid-column: 1 / 3;
+  grid-row: 2 / 5;
+}
+
+.mid2-bar {
+  grid-column: 3 / 4;
+  grid-row: 2 / 5;
+}
+
+.bottom-bar {
+  grid-column: 1 / 4;
+  grid-row: 5 / 7;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+.amount {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.3rem 0;
+}
+
+.desc {
+    display: inline-block;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.growth {
+  color: lightgreen;
+}
+
+.mid1-bar {
+  position: relative;
+}
+
+.chart-placeholder {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 200px;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.chart-placeholder .bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 70px;                 
+  min-width: 45px;                
+  position: relative;
+}
+
+.bar .bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+/*profit & loss bars*/
+.bars .profit,
+.bars .loss {
+  width: 0.8rem;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.3s;
+}
+
+.bar span {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/*profit color*/
+.bars .profit {
+  background-color: #2932b7;
+}
+
+/*loss color*/
+.bars .loss {
+  background-color: #ffffffcc;
+}
+
+/*month name*/
+.bar span {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+/*legend below chart*/
+.chart-legend {
+  display: flex;
+  justify-content: right;
+  gap: 2rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/*dots*/
+.chart-legend .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.profit-dot {
+  background-color: #2932b7;
+}
+
+.loss-dot {
+  background-color: #ffffffcc;
+}
+
+/* Progress Bars */
+.progress-group {
+  margin-top: 1rem;
+}
+
+.progress-group p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem; 
+}
+.progress-group p span{
+    display: bold;
+    display: inline-block;
+}
+
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress .fill {
+  background-color: #2932b78e;
+  height: 100%;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+;
+}
+th,td {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+/*table */
+.status {
+  /*new*/
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  color: white;
+  font-weight: 500;
+  position: relative;
+  
+}
+
+/*new*/
+.status::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status.delivered::before {
+  background-color: #00b894; /* green */
+}
+
+.status.pending::before {
+  background-color: #fdcb6e; /* yellow */
+}
+
+.status.canceled::before {
+  background-color: #d63031; /* red */
+}
+
+@media (max-width: 992px) {
+
+  /* Sidebar*/
+  .side-bar {
+    padding: 0.8rem;
+  }
+
+   .top1-bar .sales-avatar img,
+    .top2-bar .sales-avatar img,
+    .top3-bar .sales-avatar img {
+        width: 3.5rem;
+        height: 3.5rem;
+        top: 8px;
+        right: 8px;
+    }
+
+  #h1Tag {
+    font-size: 1.2rem;
+  }
+
+  .sidebar-menu li {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 2rem;
+    gap: 1rem;
+  }
+
+  .chart-placeholder {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+  }
+
+  .chart-placeholder .bar {
+    flex: 1 1 60px;
+    min-width: 40px;
+  }
+
+  .bars .profit,
+  .bars .loss {
+    width: 0.7rem;
+  }
+
+  .bar span {
+    font-size: 0.7rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* mobile screen */
+@media (max-width: 768px) {
+
+  /* Sidebar becomes top bar */
+  .div {
+    grid-template-columns: 1fr;
+  }
+
+  .top1-bar .sales-avatar img,
+    .top2-bar .sales-avatar img,
+    .top3-bar .sales-avatar img {
+        width: 3rem;
+        height: 3rem;
+        top: 6px;
+        right: 6px;
+    }
+
+  .side-bar {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+ .main {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  /* Charts */
+  .chart-placeholder {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem;
+    height: auto;
+  }
+
+  .chart-placeholder .bar {
+    flex: 1 1 50px;
+    min-width: 35px;
+  }
+
+  .bars .profit,
+  .bars .loss {
+    width: 0.6rem;
+  }
+
+  .bar span {
+    font-size: 0.65rem;
+  }
+
+  .progress-group p {
+    font-size: 0.8rem;
+  }
+
+ .bottom-bar {
+  overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-placeholder .bar {
+    flex: 1 1 40px;
+  }
+
+  .bars .profit,
+  .bars .loss {
+    width: 0.5rem;
+  }
+
+  .bar span {
+    font-size: 0.6rem;
+  }
+  .top1-bar .sales-avatar img,
+    .top2-bar .sales-avatar img,
+    .top3-bar .sales-avatar img {
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 5px;
+        right: 5px;
+    }
+
+  .amount {
+    font-size: 1.4rem;
+  }
+
+   .main {
+    padding: 1rem 0.5rem;
+  }
+}

@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    <!-- Menu Button -->
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
     <div class="div">
         <div class="side-bar">
+            <!--new-->
             <h1 id="h1Tag">DUKAAN</h1>
             <ul class="sidebar-menu">
                 <li class="active">Dashboard</li>
@@ -26,6 +30,7 @@
             </div>
         </div>
 
+        <!-- Dashboard -->
         <div class="main">
             <div class="top1-bar card">
                 <h3>Today's Sales</h3>
@@ -35,7 +40,6 @@
             <div class="sales-avatar">
             <img src="src/image1.png" alt="Sales Profile">
             </div>
-
             </div>
 
             <div class="top2-bar card">
@@ -54,10 +58,9 @@
                 <div class="sales-avatar">
             <img src="src/image3.png" alt="Sales Profile">
             </div>
-
             </div>
 
-            
+            <!-- Revenue Chart -->
             <div class="mid1-bar card">
             <h3>Total Revenue</h3>
             <p class="desc">$50.4K <span class="growth">↑5% than last month</span></p>
@@ -142,6 +145,7 @@
             </div>
             </div>
 
+            <!-- Progress Bars -->
             <div class="mid2-bar card">
                 <h3>Most Sold Items</h3>
                 <div class="progress-group">
@@ -162,6 +166,7 @@
                 </div>
             </div>
 
+            <!-- Latest Orders -->
             <div class="bottom-bar card">
                 <h3>Latest Orders</h3>
                 <table>
@@ -202,5 +207,14 @@
             </div>
         </div>
     </div>
+
+<script>
+    
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.side-bar');
+    sidebar.classList.toggle('active');
+  }
+</script>  
+  
 </body>
 </html>

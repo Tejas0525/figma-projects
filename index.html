@@ -9,11 +9,13 @@
 <body>
     <!-- Menu Button -->
     <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    
+    <!-- Overlay for mobile -->
+    <div class="overlay" onclick="toggleSidebar()"></div>
 
-    <div class="div">
+    <div class="container">
         <div class="side-bar">
-            <!--new-->
-            <h1 id="h1Tag">DUKAAN</h1>
+            <h1 class="logo">DUKAAN</h1>
             <ul class="sidebar-menu">
                 <li class="active">Dashboard</li>
                 <li>Statistics</li>
@@ -36,10 +38,9 @@
                 <h3>Today's Sales</h3>
                 <p class="amount">$20.4K</p>
                 <p class="desc">We have sold 123 items</p>
-                <!-- new avatar above Today's Sales -->
-            <div class="sales-avatar">
-            <img src="src/image1.png" alt="Sales Profile">
-            </div>
+                <div class="sales-avatar">
+                    <img src="src/image1.png" alt="Sales Profile">
+                </div>
             </div>
 
             <div class="top2-bar card">
@@ -47,8 +48,8 @@
                 <p class="amount">$8.2K</p>
                 <p class="desc">Available to payout</p>
                 <div class="sales-avatar">
-            <img src="src/image2.png" alt="Sales Profile">
-            </div>
+                    <img src="src/image2.png" alt="Revenue Profile">
+                </div>
             </div>
 
             <div class="top3-bar card">
@@ -56,93 +57,23 @@
                 <p class="amount">$18.2K</p>
                 <p class="desc">Available to payout</p>
                 <div class="sales-avatar">
-            <img src="src/image3.png" alt="Sales Profile">
-            </div>
+                    <img src="src/image3.png" alt="Escrow Profile">
+                </div>
             </div>
 
             <!-- Revenue Chart -->
             <div class="mid1-bar card">
-            <h3>Total Revenue</h3>
-            <p class="desc">$50.4K <span class="growth">↑5% than last month</span></p>
-            
-            <div class="chart-legend">
-                <div><span class="dot profit-dot"></span> Profit</div>
-                <div><span class="dot loss-dot"></span> Loss</div>
-            </div>
-            
-            <div class="chart-placeholder">
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:90px;"></div>
-                    <div class="loss" style="height:70px;"></div>
+                <h3>Total Revenue</h3>
+                <p class="desc">$50.4K <span class="growth">↑5% than last month</span></p>
+                
+                <div class="chart-legend">
+                    <div><span class="dot profit-dot"></span> Profit</div>
+                    <div><span class="dot loss-dot"></span> Loss</div>
                 </div>
-                <span>Jan</span>
+                
+                <div class="chart-image">
+                    <img src="src/chart.png" alt="Revenue Chart">
                 </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:100px;"></div>
-                    <div class="loss" style="height:80px;"></div>
-                </div>
-                <span>Feb</span>
-                </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:95px;"></div>
-                    <div class="loss" style="height:65px;"></div>
-                </div>
-                <span>Mar</span>
-                </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:110px;"></div>
-                    <div class="loss" style="height:85px;"></div>
-                </div>
-                <span>Apr</span>
-                </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:75px;"></div>
-                    <div class="loss" style="height:55px;"></div>
-                </div>
-                <span>May</span>
-                </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:60px;"></div>
-                    <div class="loss" style="height:40px;"></div>
-                </div>
-                <span>Jun</span>
-                </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:85px;"></div>
-                    <div class="loss" style="height:60px;"></div>
-                </div>
-                <span>Jul</span>
-                </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:95px;"></div>
-                    <div class="loss" style="height:70px;"></div>
-                </div>
-                <span>Aug</span>
-                </div>
-
-                <div class="bar">
-                <div class="bars">
-                    <div class="profit" style="height:90px;"></div>
-                    <div class="loss" style="height:65px;"></div>
-                </div>
-                <span>Sep</span>
-                </div>
-            </div>
             </div>
 
             <!-- Progress Bars -->
@@ -184,7 +115,6 @@
                     <tbody class="data">
                         <tr>
                             <td>iPhone 13 Pro</td><td>#11232</td><td>Jun 29, 2022</td><td>Aftaq Karim</td><td class="status delivered">Delivered</td><td>$400</td><td>...</td>
-                            
                         </tr>
                         <tr>
                             <td>MacBook Pro</td><td>#11232</td><td>Jun 29, 2022</td><td>Aftaq Karim</td><td class="status pending">Pending</td><td>$288</td><td>...</td>
@@ -201,20 +131,19 @@
                         <tr>
                             <td>Airpods</td><td>#11232</td><td>Jun 29, 2022</td><td>Aftaq Karim</td><td class="status delivered">Delivered</td><td>$80</td><td>...</td>
                         </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-<script>
-    
-  function toggleSidebar() {
-    const sidebar = document.querySelector('.side-bar');
-    sidebar.classList.toggle('active');
-  }
-</script>  
-  
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.side-bar');
+            const overlay = document.querySelector('.overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>  
 </body>
 </html>

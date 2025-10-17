@@ -54,11 +54,29 @@ body {
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    gap: 0.8rem;
+}
+
+.sidebar-menu li i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li span {
+    flex: 1;
 }
 
 .sidebar-menu li:hover {
     background-color: #2f3a8f;
     transform: translateX(5px);
+}
+
+.sidebar-menu li:hover i {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .sidebar-menu li.active {
@@ -77,6 +95,11 @@ body {
     border-radius: 0 4px 4px 0;
 }
 
+.sidebar-menu li.active i {
+    opacity: 1;
+    color: #4a5bff;
+}
+
 .sidebar-footer {
     display: flex;
     flex-direction: column;
@@ -93,11 +116,29 @@ body {
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    gap: 0.8rem;
+}
+
+.sidebar-footer p i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.sidebar-footer p span {
+    flex: 1;
 }
 
 .sidebar-footer p:hover {
     background-color: #2f3a8f;
     transform: translateX(5px);
+}
+
+.sidebar-footer p:hover i {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 /* Dashboard*/
@@ -433,6 +474,12 @@ tbody tr:hover {
     
     .sidebar-menu li, .sidebar-footer p {
         padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .sidebar-menu li i, .sidebar-footer p i {
+        font-size: 0.9rem;
+        width: 18px;
     }
     
     .top1-bar .sales-avatar img,
@@ -569,5 +616,15 @@ tbody tr:hover {
     
     .mid1-bar, .mid2-bar {
         min-height: 300px;
+    }
+    
+    .sidebar-menu li, .sidebar-footer p {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .sidebar-menu li i, .sidebar-footer p i {
+        font-size: 0.85rem;
+        width: 16px;
     }
 }
